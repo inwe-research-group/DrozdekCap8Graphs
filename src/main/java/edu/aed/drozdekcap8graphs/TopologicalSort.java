@@ -60,7 +60,7 @@ public class TopologicalSort {
     }
 
     public static void main(String[] args) {
-        int n = 6; // Número de nodos en el grafo
+        int n = 7; // Número de nodos en el grafo
 
         // Crear el grafo utilizando una lista de adyacencia
         List<List<Integer>> graph = new ArrayList<>();
@@ -69,13 +69,23 @@ public class TopologicalSort {
         }
 
         // Agregar las aristas al grafo (grafo dirigido)
-        graph.get(0).add(1);
+        /*graph.get(0).add(1);
         graph.get(0).add(2);
         graph.get(1).add(3);
         graph.get(2).add(3);
         graph.get(2).add(4);
         graph.get(3).add(5);
-        graph.get(4).add(5);
+        graph.get(4).add(5);*/
+        
+        graph.get(0).add(2);
+        graph.get(0).add(3);
+        graph.get(1).add(4);
+        graph.get(2).add(3);
+        graph.get(2).add(5);
+        graph.get(3).add(1);
+        graph.get(3).add(4);
+        graph.get(3).add(5);
+        graph.get(4).add(6);
 
         TopologicalSort topologicalSort = new TopologicalSort();
         List<Integer> sortedOrder = topologicalSort.topologicalSort(graph);
